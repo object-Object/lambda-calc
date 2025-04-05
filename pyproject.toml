@@ -16,12 +16,23 @@ dependencies = [
 dev = [
     "ipykernel>=6.29.5",
     "pre-commit>=4.2.0",
+    "pytest>=8.3.5",
     "rich>=14.0.0",
     "ruff>=0.11.2",
 ]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/lambda_calc"]
+
+# pytest
+
+[tool.pytest.ini_options]
+testpaths = [
+    "test",
+]
+addopts = [
+    "--import-mode=importlib",
+]
 
 # linting/formatting
 
